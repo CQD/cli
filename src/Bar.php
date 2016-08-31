@@ -89,7 +89,7 @@ class Bar
         $time_used = time() - $this->start_time;
 
         echo sprintf(
-            "\r %s {$_yf}%{$t}d/%d{$_r} (%3d%%) {$_cf}%2dd, %02d:%02d:%02d{$_r} [ {$_gf}%s{$_yf}░{$_r}%s ]",
+            "\r %s {$_yf}%{$t}d/%d{$_r} (%3d%%) {$_cf}%2dd, %02d:%02d:%02d{$_r} [ {$_gf}%s{$_yf}🍺{$_r}%s ]",
             $msg,
             $this->progress,
             $this->total,
