@@ -1,0 +1,17 @@
+{
+    "name": "cqd/cli",
+    "type": "library",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Q\\Cli\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CQD",
+            "email": "wesleyliao@kkbox.com"
+        }
+    ],
+    "require": {}
+}
