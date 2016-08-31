@@ -105,7 +105,7 @@ class Bar
         $this->last_time = microtime(true);
     }
 
-    public function finsh()
+    public function finish()
     {
         $this->render();
         echo "\n";
