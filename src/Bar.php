@@ -84,6 +84,7 @@ class Bar
         }
         if ($space_len < 0) {
             $space_len = 0;
+            $bar_len = $this->bar_width; // 避免長度超過...
         }
 
         $time_used = time() - $this->start_time;
