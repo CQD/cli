@@ -89,7 +89,7 @@ class Bar
 
         $time_used = time() - $this->start_time;
 
-        echo sprintf(
+        $str = sprintf(
             "\r %s {$_yf}%{$t}d/%d{$_r} (%3d%%) {$_cf}%2dd, %02d:%02d:%02d{$_r} [ {$_gf}%s{$_yf}🍺{$_r}%s ]",
             $msg,
             $this->progress,
@@ -103,6 +103,7 @@ class Bar
             str_repeat(' ', $space_len)
         );
 
+        fputs(STDERR, $str);
         $this->last_time = microtime(true);
     }
 
