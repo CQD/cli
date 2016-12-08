@@ -73,7 +73,7 @@ class Bar
         $_r = "{$_c}[0m";        // color reset
 
         $this->width = (int) exec('tput cols');
-        $this->bar_width = $this->width - strlen($msg) - strlen($this->total) * 2 - 32;
+        $this->bar_width = $this->width - mb_strwidth($msg) - strlen($this->total) * 2 - 32;
 
         $t = strlen($this->total);
         $bar_len = (int) floor($this->progress * $this->bar_width / $this->total);
