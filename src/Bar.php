@@ -73,7 +73,7 @@ class Bar
         $_r = "{$_c}[0m";        // color reset
 
         $this->width = (int) exec('tput cols');
-        $this->bar_width = $this->width - mb_strwidth($msg) - strlen($this->total) * 2 - 32;
+        $this->bar_width = $this->width - mb_strwidth($msg) - strlen($this->total) * 2 - 28;
 
         $t = strlen($this->total);
         $bar_len = (int) floor($this->progress * $this->bar_width / $this->total);
@@ -90,7 +90,7 @@ class Bar
         $time_used = time() - $this->start_time;
 
         $str = sprintf(
-            "\r %s {$_yf}%{$t}d/%d{$_r} (%3d%%) {$_cf}%2dd, %02d:%02d:%02d{$_r} [ {$_gf}%s{$_yf}🍺{$_r}%s ]",
+            "\r %s {$_yf}%{$t}d/%d{$_r} (%3d%%) {$_cf}%2dd, %02d:%02d:%02d{$_r} {$_gb}%s{$_r}🍺{$_r}{$_c}[1;30m%s{$_r}",
             $msg,
             $this->progress,
             $this->total,
@@ -99,8 +99,8 @@ class Bar
             $time_used / 3600 % 24,
             $time_used / 60 % 60,
             $time_used % 60,
-            str_repeat('▒', $bar_len),
-            str_repeat(' ', $space_len)
+            str_repeat(' ', $bar_len),
+            str_repeat('░', $space_len)
         );
 
         fputs(STDERR, $str);
